@@ -21,12 +21,8 @@ class LandmarkViewModel: LandmarkViewModelProtocol {
     @Published var state: ViewState = .none
 
     @Published var entities: [Entity] = []
-    private let landMarkService: LandmarkServiceProtocol
+    private let landMarkService: LandmarkServiceProtocol = LandmarkAPIService()
 
-    // Initialize the view model with a service conforming to LandmarkServiceProtocol.
-    init(landMarkService: LandmarkServiceProtocol) {
-        self.landMarkService = landMarkService
-    }
 
     // Function to fetch landmarks based on user input.
     func fetchLandMarks() {

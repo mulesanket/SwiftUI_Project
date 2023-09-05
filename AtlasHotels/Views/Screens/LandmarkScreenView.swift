@@ -10,7 +10,7 @@ import SwiftUI
 
 // A view for the landmark screen.
 struct LandmarkScreenView: View {
-    @StateObject var landMarkViewModel: LandmarkViewModel = LandmarkViewModel(landMarkService: LandmarkAPIService())
+    @StateObject var landMarkViewModel: LandmarkViewModel = LandmarkViewModel()
     @EnvironmentObject var loginViewModel: LoginViewModel
 
     var body: some View {

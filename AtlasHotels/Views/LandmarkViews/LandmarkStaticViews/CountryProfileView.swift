@@ -93,6 +93,6 @@ struct HotelCardView: View {
 
 struct CountryProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryProfileView(landMarkViewModel: LandmarkViewModel(landMarkService: LandmarkAPIService()))
+        CountryProfileView(landMarkViewModel: LandmarkViewModel())
     }
 }

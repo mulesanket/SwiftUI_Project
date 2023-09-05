@@ -9,7 +9,7 @@ import SwiftUI
 
 // A view for the login screen.
 struct LoginScreenView: View {
-    @StateObject var loginViewModel: LoginViewModel = LoginViewModel(loginService: LoginAPIService())
+    @StateObject var loginViewModel: LoginViewModel = LoginViewModel()
 
     var body: some View {
         NavigationStack {

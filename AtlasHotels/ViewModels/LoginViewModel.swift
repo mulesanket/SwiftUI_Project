@@ -18,12 +18,8 @@ class LoginViewModel: ObservableObject {
     @Published var isLoggedIn = false
     @Published var keepSignedIn = false
 
-    private let loginService: LoginService
+    private let loginService: LoginService = LoginAPIService()
 
-    // Initialize the view model with a service conforming to LoginService.
-    init(loginService: LoginService) {
-        self.loginService = loginService
-    }
 
     // Computed property to check if the app is in dark mode.
     var isDarkMode: Bool {

@@ -51,7 +51,7 @@ struct LandmarkScreenView: View {
 struct LandMarkScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkScreenView()
-            .environmentObject(LoginViewModel(loginService: LoginAPIService()))
+            .environmentObject(LoginViewModel())
     }
 }
 

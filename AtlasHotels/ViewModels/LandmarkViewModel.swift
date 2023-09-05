@@ -7,13 +7,8 @@
 
 import Foundation
 
-// Protocol defining the interface for a LandmarkViewModel.
-protocol LandmarkViewModelProtocol: ObservableObject {
-    func fetchLandMarks() async
-}
-
 @MainActor
-class LandmarkViewModel: LandmarkViewModelProtocol {
+class LandmarkViewModel: ObservableObject {
 
     // Published properties that trigger UI updates when their values change.
     @Published var hasError: Bool = false

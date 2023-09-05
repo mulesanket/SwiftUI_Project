@@ -26,11 +26,7 @@ class HotelListViewModel: ObservableObject {
     @Published var hotels: [CustomHotelModel] = []
 
     // Service responsible for fetching hotel data.
-    private let hotelListService: HotelListServiceProtocol
-
-    init(hotelListService: HotelListServiceProtocol) {
-        self.hotelListService = hotelListService
-    }
+    private let hotelListService: HotelListServiceProtocol = HotelListAPIService()
 
     // Computed property to check if the app is in dark mode.
     var isDarkMode: Bool {

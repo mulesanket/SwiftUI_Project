@@ -11,7 +11,7 @@ import SwiftUI
 // A view for the hotel list screen.
 struct HotelListScreenView: View {
     var geoId: String?
-    @ObservedObject var hotelListViewModel = HotelListViewModel(hotelListService: HotelListAPIService())
+    @ObservedObject var hotelListViewModel = HotelListViewModel()
     @ObservedObject var landMarkViewModel: LandmarkViewModel = LandmarkViewModel()
     @EnvironmentObject var loginViewModel: LoginViewModel
     @Environment(\.presentationMode) var presentationMode

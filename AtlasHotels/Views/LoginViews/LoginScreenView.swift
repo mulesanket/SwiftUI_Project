@@ -41,6 +41,7 @@ struct LoginScreenView: View {
                 // Navigate to LandmarkScreenView when isLoggedIn becomes true
                 .navigationDestination(isPresented: $loginViewModel.isLoggingIn, destination: {
                     ProgressView()
+                    Text("Logging In")
                 })
                 .navigationDestination(isPresented: $loginViewModel.isLoggedIn) {
                     LandmarkScreenView()

@@ -37,6 +37,7 @@ struct LandmarkListView: View {
 
     var body: some View {
         Text("Showing results for \(landMarkViewModel.textInputForLocation)")
+            .foregroundColor(.blue)
 
         List(entities) { landmark in
             NavigationLink {

@@ -41,6 +41,10 @@ class HotelListViewModel: ObservableObject {
             do {
                 let decodedData = try await fetchHotelData(geoId: geoId)
                 hotels.append(contentsOf: decodedData)
+                if hotels.isEmpty {
+                    state = .dataEmpty
+                    return
+                }
                 state = .success
             } catch {
                 handleFetchError(error)

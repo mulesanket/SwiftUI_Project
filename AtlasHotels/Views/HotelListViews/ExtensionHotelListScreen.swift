@@ -30,7 +30,8 @@ extension HotelListScreenView {
                         paginateHotels()
                     }
                 }
-        }
+        }// Display static landmark data
+
     }
 
     // View for displaying a loading indicator when fetching hotels
@@ -39,6 +40,9 @@ extension HotelListScreenView {
             if case .loading = hotelListViewModel.state {
                 ProgressView()
                 Text("Fetching Hotels")
+            }
+            if case .dataEmpty = hotelListViewModel.state {
+                Text("No hotels found. Try changing sorting meyhod ")
             }
         }
     }

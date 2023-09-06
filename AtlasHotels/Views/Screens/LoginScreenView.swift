@@ -39,6 +39,9 @@ struct LoginScreenView: View {
                 .padding()
 
                 // Navigate to LandmarkScreenView when isLoggedIn becomes true
+                .navigationDestination(isPresented: $loginViewModel.isLoggingIn, destination: {
+                    ProgressView()
+                })
                 .navigationDestination(isPresented: $loginViewModel.isLoggedIn) {
                     LandmarkScreenView()
                         .environmentObject(loginViewModel)

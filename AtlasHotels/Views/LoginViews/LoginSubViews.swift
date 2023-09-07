@@ -12,7 +12,7 @@ struct LoginScreenBackground: View {
     var body: some View {
         LinearGradient(
 //            gradient: Gradient(colors: [Color("PrimaryBlue"), Color("SecondaryTeal")]),
-            gradient: Gradient(colors: [Color.purple.opacity(0.3), Color.purple.opacity(0.4)]),
+            gradient: Gradient(colors: [Color.white.opacity(0.3), Color.white.opacity(0.3)]),
             startPoint: .top,
             endPoint: .bottomLeading
         )

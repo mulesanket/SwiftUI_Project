@@ -42,7 +42,7 @@ struct LandmarkListView: View {
 
         List(entities) { landmark in
             NavigationLink {
-                HotelListScreenView(geoId: landmark.geoId)
+               HotelListScreenView(geoId: landmark.geoId)
                     .environmentObject(loginViewModel)
             } label: {
                 Text(landmark.name)

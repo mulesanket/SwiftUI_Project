@@ -37,7 +37,6 @@ class LoginViewModel: ObservableObject {
             let loginResponseArray = try await loginService.login(username: username, password: password)
             try authenticateUser(loginModelArray: loginResponseArray)
             errorMessage = ""
-            isLoggingIn = false
             isLoggedIn = true
         } catch {
             isLoggingIn = false

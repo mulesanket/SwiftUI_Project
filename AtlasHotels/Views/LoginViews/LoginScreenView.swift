@@ -20,7 +20,7 @@ struct LoginScreenView: View {
                 VStack {
                     // Title of the login screen
                     LoginTitleView
-                    
+
                     // Email input field
                     EmailTextInputFieldView
 

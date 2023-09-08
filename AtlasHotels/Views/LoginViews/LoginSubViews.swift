@@ -27,7 +27,7 @@ struct LoginTitle: View {
             SwiftUI.Image("SplashScreenImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .padding(.vertical) 
+                .padding(.vertical)
 
             Text("Login")
                 .font(.system(size: 34, weight: .bold, design: .default))

@@ -17,7 +17,6 @@ class LoginViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var isLoggedIn = false
     @Published var keepSignedIn = false
-//    @Published var isLoggingIn = false
 
     private let loginService: LoginService = LoginAPIService()
 
@@ -33,13 +32,11 @@ class LoginViewModel: ObservableObject {
             return
         }
         do {
-//            isLoggingIn = true
             let loginResponseArray = try await loginService.login(username: username, password: password)
             try authenticateUser(loginModelArray: loginResponseArray)
             errorMessage = ""
             isLoggedIn = true
         } catch {
-//            isLoggingIn = false
             handleLoginError(error)
         }
     }

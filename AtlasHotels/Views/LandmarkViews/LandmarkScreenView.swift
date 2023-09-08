@@ -16,7 +16,7 @@ struct LandmarkScreenView: View {
     var body: some View {
         VStack {
             // Search bar for landmarks (You can replace LandmarkSearchBarView with your own)
-            LandmarkSearchBarView
+//            LandmarkSearchBarView
 
             // Display different views based on the state of landMarkViewModel
             switch landMarkViewModel.state {
@@ -35,9 +35,15 @@ struct LandmarkScreenView: View {
             // Display a static landmark data view when not in a success state
             if case .success = landMarkViewModel.state {
                 // You can add additional views or logic here for the success state
+            } else  if case .none = landMarkViewModel.state {
+                LandmarkSearchBarView
+                StaticlandmarkDataView
+                // You can add additional views or logic here for the success state
             } else {
-                StaticlandmarkDataView // Display static landmark data
+//                StaticlandmarkDataView
+                // Display static landmark data
             }
+            
         }
         .alert(isPresented: $landMarkViewModel.hasError) { errorAlert } // Show an error alert if there's an error
         .navigationBarBackButtonHidden()

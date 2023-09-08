@@ -39,6 +39,7 @@ struct LandmarkListView: View {
     var body: some View {
         Text("Showing results for \(landMarkViewModel.textInputForLocation)")
             .foregroundColor(.blue)
+            .font(.headline)
 
         List(entities) { landmark in
             NavigationLink {
@@ -47,9 +48,16 @@ struct LandmarkListView: View {
             } label: {
                 Text(landmark.name)
                     .foregroundColor(Color.primary)
+                    .font(.body)
                     .padding(.vertical)
+                Spacer() // Add space to the right
             }
         }
+        .background(Color.white) // Set the background color of each row
+                        .cornerRadius(10) // Apply corner radius for rounded corners
+                        .padding(.horizontal, 16) // Apply horizontal padding
+                        .padding(.vertical, 4) // Apply vertical padding
+                        .shadow(color: Color.gray.opacity(0.3), radius: 3, x: 0, y: 2) // Add a shadow
     }
 }
 

@@ -14,36 +14,6 @@ struct APIConfig {
     static let baseUrl = "https://hotels4.p.rapidapi.com/"
 }
 
-protocol DataService {
-    func dataForUrl(urlRequest: URLRequest)
-}
-
-class NetworkDataService: DataService {
-    func dataForUrl(urlRequest: URLRequest) {
-        
-    }
-}
-
-//class OfflineDataService: DataService {
-//    func dataForUrl(urlRequest: URLRequest) {
-//
-//    }
-//
-//
-//}
-//
-//
-//class DataProvider {
-//    var dataService: DataService
-//}
-
-
-//struct DataServiceConfig {
-//
-//
-//
-//}
-
 class CommonDataService {
 
 //    var config: DataServiceConfig
@@ -90,6 +60,45 @@ enum ViewState {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+//protocol DataService {
+//    func dataForUrl(urlRequest: URLRequest)
+//}
+//
+//class NetworkDataService: DataService {
+//    func dataForUrl(urlRequest: URLRequest) {
+//
+//    }
+//}
+
+//class OfflineDataService: DataService {
+//    func dataForUrl(urlRequest: URLRequest) {
+//
+//    }
+//
+//
+//}
+//
+//
+//class DataProvider {
+//    var dataService: DataService
+//}
+
+
+//struct DataServiceConfig {
+//
+//
+//
+//}
 
 
 

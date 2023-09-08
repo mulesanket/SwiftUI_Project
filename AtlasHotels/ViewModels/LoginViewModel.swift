@@ -71,6 +71,7 @@ class LoginViewModel: ObservableObject {
     // Function to authenticate the user.
     func authenticateUser(loginModelArray: [LoginModel]) throws {
         guard username == loginModelArray[0].email && password == loginModelArray[0].password else {
+            isLogging = false
             throw LoginError.invalidCredentials
         }
         clearCredentials()

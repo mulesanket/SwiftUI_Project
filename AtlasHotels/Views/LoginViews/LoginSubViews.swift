@@ -198,3 +198,18 @@ struct RectangleCheckboxStyle: ToggleStyle {
     }
 }
 
+struct CustomProgressView: View {
+    var body: some View {
+        VStack {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: Color.blue)) // Customize the color
+                .scaleEffect(2.0, anchor: .center) // Adjust the scale as needed for size
+                .padding()
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(10)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.4).edgesIgnoringSafeArea(.all))
+    }
+}
+

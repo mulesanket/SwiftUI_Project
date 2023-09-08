@@ -41,7 +41,16 @@ struct LoginScreenView: View {
                     LandmarkScreenView()
                         .environmentObject(loginViewModel)
                 }
+                .onAppear(){
+                    loginViewModel.isLogging = false
+                }
+                .blur(radius: loginViewModel.isLogging ? 1 : 0) // Adjust the radius as needed
             }
+            .overlay(content: {
+                if loginViewModel.isLogging {
+                    CustomProgressView()
+                }
+            })
         }
     }
 }
@@ -52,6 +61,7 @@ struct LoginScreenView_Previews: PreviewProvider {
         LoginScreenView()
     }
 }
+
 
 
 

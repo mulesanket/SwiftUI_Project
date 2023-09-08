@@ -8,11 +8,16 @@
 import SwiftUI
 
 @main
-struct IOSProject_MVVMApp: App {
-
+struct AtlasHotelsApp: App {
         var body: some Scene {
             WindowGroup {
-                ContentView()
+                SplashView()
             }
         }
+}
+
+struct AtlasHotelsApp_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashView()
+    }
 }

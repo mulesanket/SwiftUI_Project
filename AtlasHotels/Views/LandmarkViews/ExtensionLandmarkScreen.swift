@@ -35,7 +35,7 @@ extension LandmarkScreenView {
     // View for displaying a progress indicator while fetching landmarks
     var LandmarkProgressView: some View {
         VStack {
-            ProgressView()
+            CustomLandmarkProgressView()
             Text("Fetching landmarks...")
         }
     }

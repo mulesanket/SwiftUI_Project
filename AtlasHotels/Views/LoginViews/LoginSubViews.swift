@@ -12,7 +12,7 @@ struct LoginScreenBackground: View {
     var body: some View {
         LinearGradient(
 //            gradient: Gradient(colors: [Color("PrimaryBlue"), Color("SecondaryTeal")]),
-            gradient: Gradient(colors: [Color.white.opacity(0.3), Color.white.opacity(0.3)]),
+            gradient: Gradient(colors: [Color("BackGround"), Color("BackGround")]),
             startPoint: .top,
             endPoint: .bottomLeading
         )
@@ -24,7 +24,7 @@ struct LoginScreenBackground: View {
 struct LoginTitle: View {
     var body: some View {
         VStack {
-            SwiftUI.Image("SplashScreen")
+            SwiftUI.Image("SplashScreenImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(.vertical) 

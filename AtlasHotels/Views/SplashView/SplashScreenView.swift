@@ -15,11 +15,11 @@ struct SplashView: View {
 
         ZStack {
             // Background color (You can replace this with your own background view)
-            Color.white.opacity(0.3).ignoresSafeArea()
+            Color("BackGround").ignoresSafeArea()
 
             VStack {
                 // Logo or image (Replace "SplashScreen" with your logo image name)
-                SwiftUI.Image("SplashScreen")
+                SwiftUI.Image("SplashScreenImage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 250, height: 250)

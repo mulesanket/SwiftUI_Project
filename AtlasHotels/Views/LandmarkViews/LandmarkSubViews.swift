@@ -61,7 +61,7 @@ struct LandmarkListView: View {
     }
 }
 
-struct CustomLandmarkProgressView: View {
+struct CustomProgressView: View {
     var body: some View {
         VStack {
             ProgressView()

@@ -38,7 +38,7 @@ extension HotelListScreenView {
     var HotelProgessView: some View {
         VStack {
             if case .loading = hotelListViewModel.state {
-                CustomLandmarkProgressView()
+                CustomProgressView()
                 Text("Fetching Hotels")
             }
             if case .dataEmpty = hotelListViewModel.state {

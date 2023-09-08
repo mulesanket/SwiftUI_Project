@@ -198,7 +198,7 @@ struct RectangleCheckboxStyle: ToggleStyle {
     }
 }
 
-struct CustomProgressView: View {
+struct LoginProgressView: View {
     var body: some View {
         VStack {
             ProgressView()

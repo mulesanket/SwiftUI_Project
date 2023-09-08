@@ -48,7 +48,7 @@ struct LoginScreenView: View {
             }
             .overlay(content: {
                 if loginViewModel.isLogging {
-                    CustomProgressView()
+                    LoginProgressView()
                 }
             })
         }

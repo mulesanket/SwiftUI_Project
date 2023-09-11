@@ -79,11 +79,13 @@ class LoginViewModel: ObservableObject {
 
     // Function to handle login errors.
     func handleLoginError(_ error: Error) {
+
         if let apiError = error as? LoginError {
             errorMessage = apiError.localizedDescription
         } else {
             errorMessage = "An error occurred"
         }
+        isLogging = false
         isLoggedIn = false
     }
 

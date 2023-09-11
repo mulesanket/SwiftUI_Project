@@ -21,7 +21,6 @@ class LoginViewModel: ObservableObject {
 
     private let loginService: LoginService = LoginAPIService()
 
-
     // Computed property to check if the app is in dark mode.
     var isDarkMode: Bool {
         UIScreen.main.traitCollection.userInterfaceStyle == .dark
@@ -42,6 +41,13 @@ class LoginViewModel: ObservableObject {
             handleLoginError(error)
         }
     }
+}
+
+
+
+
+// extension for validations
+extension LoginViewModel {
 
     // Function to validate user input.
     func validateInput() -> Bool {
@@ -125,3 +131,5 @@ class LoginViewModel: ObservableObject {
         return passwordPredicate.evaluate(with: password)
     }
 }
+
+

@@ -9,12 +9,12 @@ import Foundation
 
 // Protocol defining the interface for a LoginService.
 protocol LoginService {
-    func login(username: String, password: String) async throws -> [LoginModel]
+    func login(username: String, password: String) async throws -> [User]
 }
 
 // Implementation of LoginService using a real API.
 class LoginAPIService: LoginService {
-    func login(username: String, password: String) async throws -> [LoginModel] {
+    func login(username: String, password: String) async throws -> [User] {
         guard let url = URL(string: "http://172.27.46.174:3000/login") else {
             throw LoginError.invalidURL
         }
@@ -28,8 +28,8 @@ class LoginAPIService: LoginService {
             throw LoginError.serverError
         }
         do {
-            let decodedData = try JSONDecoder().decode(LoginModelResponse.self, from: data)
-            let loginModelArray = decodedData.logins
+            let decodedData = try JSONDecoder().decode(LoginResponse.self, from: data)
+            let loginModelArray = decodedData.userList
             return loginModelArray
         } catch {
             throw LoginError.invalidData
@@ -39,9 +39,9 @@ class LoginAPIService: LoginService {
 
 // Mock implementation of LoginService for testing purposes.
 class LoginMockService: LoginService {
-    func login(username: String, password: String) async throws -> [LoginModel] {
+    func login(username: String, password: String) async throws -> [User] {
         let loginModels = [
-            LoginModel(email: "john@gmail.com", password: "Cybage@123")
+            User(email: "john@gmail.com", password: "Cybage@123")
         ]
         return loginModels
     }

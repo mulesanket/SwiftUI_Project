@@ -9,12 +9,12 @@ import Foundation
 
 // Protocol defining the interface for a LandmarkService.
 protocol LandmarkServiceProtocol {
-    func fetchLandMarksData(location: String) async throws -> LandmarkModelResponse
+    func fetchLandMarksData(location: String) async throws -> LandmarkResponse
 }
 
 // Implementation of LandmarkService using an actual API.
 class LandmarkAPIService: LandmarkServiceProtocol {
-    func fetchLandMarksData(location: String) async throws -> LandmarkModelResponse {
+    func fetchLandMarksData(location: String) async throws -> LandmarkResponse {
         let urlString = APIConfig.baseUrl.appending("locations/v2/search?query=\(location)")
         guard let url = URL(string: urlString) else {
             throw LandmarkServiceError.invalidURL
@@ -28,7 +28,7 @@ class LandmarkAPIService: LandmarkServiceProtocol {
             throw LandmarkServiceError.serverError
         }
         do {
-            let decodedData = try JSONDecoder().decode(LandmarkModelResponse.self, from: data)
+            let decodedData = try JSONDecoder().decode(LandmarkResponse.self, from: data)
             return decodedData
         } catch {
             throw LandmarkServiceError.invalidData
@@ -38,7 +38,7 @@ class LandmarkAPIService: LandmarkServiceProtocol {
 
 // Mock implementation of LandmarkService for testing purposes.
 class LandmarkMockService: LandmarkServiceProtocol {
-    func fetchLandMarksData(location: String) async throws -> LandmarkModelResponse {
+    func fetchLandMarksData(location: String) async throws -> LandmarkResponse {
         let entities: [Entity] = [
             Entity(geoId: "1598", destinationId: "1", latitude: 123456, longitude: 12345, name: "Pune"),
             Entity(geoId: "1528", destinationId: "1", latitude: 123456, longitude: 12345, name: "Mumbai"),
@@ -47,7 +47,7 @@ class LandmarkMockService: LandmarkServiceProtocol {
             Entity(geoId: "7868", destinationId: "1", latitude: 123456, longitude: 12345, name: "Indiana")
         ]
         let suggestion: [Suggestion] = [ Suggestion(group: "CITY_GROUP", entities: entities) ]
-        let landmarkModelResponse = LandmarkModelResponse(term: "india", suggestions: suggestion)
+        let landmarkModelResponse = LandmarkResponse(term: "india", suggestions: suggestion)
         return landmarkModelResponse
     }
 }

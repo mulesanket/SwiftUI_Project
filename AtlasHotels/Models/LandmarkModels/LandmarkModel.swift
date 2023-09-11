@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LandmarkModelResponse : Codable {
+struct LandmarkResponse : Codable {
     let term: String
     let suggestions : [Suggestion]
 

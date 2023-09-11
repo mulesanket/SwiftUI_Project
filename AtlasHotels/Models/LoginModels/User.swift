@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct LoginModelResponse: Decodable {
-    let logins: [LoginModel]
+struct LoginResponse: Decodable {
+    let userList: [User]
 }
-struct LoginModel: Codable, Identifiable{
+struct User: Codable, Identifiable{
    enum CodingKeys: CodingKey {
        case email
        case password

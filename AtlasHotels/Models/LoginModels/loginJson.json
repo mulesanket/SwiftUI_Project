@@ -1,12 +1,12 @@
 {
     "login":
-{
-  "userList": [
     {
-      "id": 1,
-      "email": "john@gmail.com",
-      "password": "Cybage@123"
+        "userList": [
+            {
+                "id": 1,
+                "email": "john@gmail.com",
+                "password": "Cybage@123"
+            }
+        ]
     }
-  ]
-}
 }

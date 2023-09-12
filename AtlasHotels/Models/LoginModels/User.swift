@@ -10,6 +10,7 @@ import Foundation
 struct LoginResponse: Codable {
     let userList: [User]
 }
+
 struct User: Codable, Identifiable{
    enum CodingKeys: CodingKey {
        case email

@@ -14,6 +14,8 @@ class LoginViewModel: ObservableObject {
     // Published properties that trigger UI updates when their values change.
     @Published var username = "john@gmail.com"
     @Published var password = "Cybage@123"
+//    @Published var username = ""
+//    @Published var password = ""
     @Published var errorMessage = ""
     @Published var isLoggedIn = false
     @Published var keepSignedIn = false

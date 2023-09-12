@@ -8,7 +8,7 @@
 import Foundation
 
 struct APIConfig {
-    static let apiKey = "bb177fd51amshda1718a4ea218cbp1f0e77jsn0507c169dc2f"
+    static let apiKey = "dc96834066msh79888e3a740e422p1892f2jsn589b6c45c707"
     static let host = "hotels4.p.rapidapi.com"
     static let urlSession = URLSession.shared
     static let baseUrl = "https://hotels4.p.rapidapi.com/"

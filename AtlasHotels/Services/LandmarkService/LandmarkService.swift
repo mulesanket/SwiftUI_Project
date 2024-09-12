@@ -2,12 +2,12 @@
 //  LandMarkService.swift
 //  IOSProject_MVVM
 //
-//  Created by Vishal Bhapkar on 08/08/23.
+//  Created by Vishal Bhapkar on 08/08/23.9
 //
 
 import Foundation
 
-// Protocol defining the interface for a LandmarkService.
+// Protocol definingul, the interface for a LandmarkService.
 protocol LandmarkServiceProtocol {
     func fetchLandMarksData(location: String) async throws -> LandmarkResponse
 }
@@ -18,7 +18,7 @@ class LandmarkAPIService: LandmarkServiceProtocol {
         let urlString = APIConfig.baseUrl.appending("locations/v2/search?query=\(location)")
         guard let url = URL(string: urlString) else {
             throw LandmarkServiceError.invalidURL
-        }
+            }
         // Creating a request object with common headers.
         let request = CommonDataService().configureRequest(url: url, httpMethod: "GET")
         let (data, response) = try await APIConfig.urlSession.data(for: request)

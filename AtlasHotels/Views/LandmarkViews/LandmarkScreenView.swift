@@ -31,7 +31,7 @@ struct LandmarkScreenView: View {
                     NoInputView // Display a view when there's no user input
                     StaticlandmarkDataView
                 default:
-                    EmptyView() // Display an empty view for other cases
+    EmptyView() // Display an empty view for other cases
             }
         }
         .alert(isPresented: $landMarkViewModel.hasError) { errorAlert } // Show an error alert if there's an error
